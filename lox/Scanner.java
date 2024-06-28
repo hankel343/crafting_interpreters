@@ -92,6 +92,11 @@ class Scanner {
         return true;
     }
 
+    private char peek() {
+        if (isAtEnd())  return '\0';
+        return source.charAt(current);
+    }
+
     private boolean isAtEnd() {
         return (current >= source.length());
     }
