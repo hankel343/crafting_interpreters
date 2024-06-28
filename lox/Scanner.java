@@ -109,6 +109,21 @@ class Scanner {
         addToken(STRING, value);
     }
 
+    private void number() {
+        while (isDigit(peek())) advance();
+
+        // look for fractional part
+        if (peek() == '.' && isDigit(peekNext())) {
+            // consume the "."
+            advance();
+
+            while (isDigit(peek())) advance();
+        }
+
+        addToken(NUMBER,
+                Double.parseDouble(source.substring(start, current)));
+    }
+
     private boolean match(char expected) {
         if (isAtEnd())  return false;
         if (source.charAt(current) != expected) return false;
