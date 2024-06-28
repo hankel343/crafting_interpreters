@@ -48,4 +48,8 @@ class Scanner {
     private boolean isAtEnd() {
         return (current >= source.length());
     }
+
+    private char advance() {
+        return source.charAt(current++);
+    }
 }
