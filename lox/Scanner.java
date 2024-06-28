@@ -52,4 +52,8 @@ class Scanner {
     private char advance() {
         return source.charAt(current++);
     }
+
+    private void addToken(TokenType type) {
+        addToken(type, null);
+    }
 }
