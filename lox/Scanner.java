@@ -78,8 +78,9 @@ class Scanner {
                 line++;
                 break;
 
+            case '"': string(); break;
+
             default:
-                Lox.error(line, "Unexpected character.");
                 break;
         }
     }
