@@ -56,7 +56,7 @@ class Scanner {
                 break;
 
             case '>':
-                addToken(match('=' ? GREATER_EQUAL : GREATER));
+                addToken(match('=') ? GREATER_EQUAL : GREATER);
                 break;
 
             default:
