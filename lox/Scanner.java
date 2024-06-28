@@ -29,7 +29,7 @@ class Scanner {
         return tokens;
     }
 
-    private void scanTokens() {
+    private void scanToken() {
         char c = advance();
         switch (c) {
             case '(':   addToken(LEFT_PAREN);   break;
