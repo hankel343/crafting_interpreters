@@ -1,6 +1,6 @@
 package com.craftinginterpreters.lox;
 
-import java.util.ArrayLlist;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +9,7 @@ import static com.craftinginterpreters.lox.TokenType.*;
 
 class Scanner {
     private final String source;
-    private final List<Token> tokens = new ArrayLlist<>();
+    private final List<Token> tokens = new ArrayList<>();
     private int start = 0;
     private int current = 0;
     private int line = 1;
@@ -63,7 +63,7 @@ class Scanner {
             case '-':   addToken(MINUS);        break;
             case '+':   addToken(PLUS);         break;
             case ';':   addToken(SEMICOLON);    break;
-            case '*':   addToken(START);        break;
+            case '*':   addToken(STAR);        break;
 
             case '!':
                 addToken(match('=') ? BANG_EQUAL : BANG);
