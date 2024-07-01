@@ -75,6 +75,12 @@ class Parser {
         return false;
     }
 
+    private Token consume(TokenType type, String message) {
+        if (check(type))    return advance();
+
+        throw error(peek(), message);
+    }
+
     private Expr unary() {
         if (match(BANG, MINUS)) {
             Token operator = previous();
