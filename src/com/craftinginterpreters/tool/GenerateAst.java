@@ -59,7 +59,7 @@ public class GenerateAst {
                     typeName + " " + baseName.toLowerCase() + ");");
             }
 
-            writer.println("    }\n");
+            writer.println("    }");
     }
 
     private static void defineType(
@@ -78,7 +78,7 @@ public class GenerateAst {
                 writer.println("        this." + name + " = " + name + ";");
             }
 
-            writer.println("    }\n");
+            writer.println("    }");
 
             // Visitor pattern.
             writer.println();
@@ -86,7 +86,7 @@ public class GenerateAst {
             writer.println("    <R> R accept(Visitor<R> visitor) {");
             writer.println("        return visitor.visit" +
                 className + baseName + "(this);");
-            writer.println("    }\n");
+            writer.println("    }");
 
             // Fields.
             writer.println();
@@ -94,7 +94,7 @@ public class GenerateAst {
                 writer.println("        final " + field + ";");
             }
 
-            writer.println("    }\n");
+            writer.println("    }");
         }
 
 }
