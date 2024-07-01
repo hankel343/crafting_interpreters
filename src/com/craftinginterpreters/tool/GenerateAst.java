@@ -51,7 +51,7 @@ public class GenerateAst {
 
     private static void defineVisitor(
         PrintWriter writer, String baseName, List<String> types) {
-            writer.println("    interface Vistor<R> {");
+            writer.println("    interface Visitor<R> {");
 
             for (String type : types) {
                 String typeName = type.split(":")[0].trim();
@@ -59,7 +59,7 @@ public class GenerateAst {
                     typeName + " " + baseName.toLowerCase() + ");");
             }
 
-            writer.println("    }");
+            writer.println("    }\n");
     }
 
     private static void defineType(
@@ -78,15 +78,15 @@ public class GenerateAst {
                 writer.println("        this." + name + " = " + name + ";");
             }
 
-            writer.println("    }");
+            writer.println("    }\n");
 
             // Visitor pattern.
             writer.println();
             writer.println("    @Override");
             writer.println("    <R> R accept(Visitor<R> visitor) {");
-            writer.println("      return visitor.visit" +
+            writer.println("        return visitor.visit" +
                 className + baseName + "(this);");
-            writer.println("    }");
+            writer.println("    }\n");
 
             // Fields.
             writer.println();
@@ -94,7 +94,7 @@ public class GenerateAst {
                 writer.println("        final " + field + ";");
             }
 
-            writer.println("    }");
+            writer.println("    }\n");
         }
 
 }
