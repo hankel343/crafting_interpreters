@@ -75,6 +75,16 @@ class Parser {
         return false;
     }
 
+    private Expr unary() {
+        if (match(BANG, MINUS)) {
+            Token operator = previous();
+            Expr right = unary();
+            return new Expr.Unary(operator, right);
+        }
+
+        return primary();
+    }
+
     private boolean check(TokenType type) {
         if (isAtEnd()) return false;
         return peek().type == type;
