@@ -15,7 +15,8 @@ class Interpreter implements Expr.Visitor<Object> {
             case BANG:
                 return !isTruthy(right);
             case MINUS:
-                    return -(double)right;
+                checkNumberOperand(expr.operator, right);
+                return -(double)right;
         }
 
         // Unreachable
@@ -59,7 +60,6 @@ class Interpreter implements Expr.Visitor<Object> {
             case LESS_EQUAL:
                 return (double) left <= (double) right;
             case MINUS:
-                checkNumberOperand(expr.operator, right);
                 return (double) left - (double) right;
             case BANG_EQUAL:
                 return !isEqual(left, right);
