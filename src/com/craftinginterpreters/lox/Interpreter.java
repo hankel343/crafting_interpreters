@@ -59,6 +59,7 @@ class Interpreter implements Expr.Visitor<Object> {
             case LESS_EQUAL:
                 return (double) left <= (double) right;
             case MINUS:
+                checkNumberOperand(expr.operator, right);
                 return (double) left - (double) right;
             case BANG_EQUAL:
                 return !isEqual(left, right);
@@ -82,5 +83,10 @@ class Interpreter implements Expr.Visitor<Object> {
 
         // Unreachable
         return null;
+    }
+
+    private void checkNumberOperand(Token operator, Object operand) {
+        if (operand instanceof Double)  return;
+        throw new RuntimeError(operator, "Operand must be a number.");
     }
 }
