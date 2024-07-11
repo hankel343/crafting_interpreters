@@ -21,7 +21,7 @@ class Environment {
         }
 
         if (enclosing != null)  return enclosing.get(name);
-        
+
         throw new RuntimeError(name, "Undefined variable '" + name.lexeme + "'.");
     }
     
@@ -31,6 +31,11 @@ class Environment {
             return;
         }
 
+        if (enclosing != null) {
+            enclosing.assign(name, value);
+            return;
+        }
+        
         throw new RuntimeError(name, "Undefined variable '" + name.lexeme + "'.");
     }
     void define(String name, Object value) {
