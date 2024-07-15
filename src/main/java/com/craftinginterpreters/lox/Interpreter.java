@@ -182,7 +182,7 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
         if (stmt.superclass != null) {
             superclass = evaluate(stmt.superclass);
             if (!(superclass instanceof LoxClass)) {
-                throw new RuntimeError(stmt.superclass.name, "Superclass msut be a class.");
+                throw new RuntimeError(stmt.superclass.name, "Superclass must be a class.");
             }
         }
 
@@ -195,7 +195,7 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
         }
 
         LoxClass klass = new LoxClass(stmt.name.lexeme, (LoxClass)superclass, methods);
-        
+
         environment.assign(stmt.name, klass);
         return null;
     }
