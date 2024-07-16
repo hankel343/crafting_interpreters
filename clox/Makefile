@@ -1,5 +1,4 @@
 clox:
-	mkdir build/
 	$(CC) -c src/*.c
 	mv *.o build/
 	$(CC) -o $@ build/*.o
