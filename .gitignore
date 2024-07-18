@@ -2,6 +2,9 @@ build/
 *.class
 sources.txt
 
+clox/src/bin
+clox/src/obj
+
 # maven 
 target/
 pom.xml.tag
