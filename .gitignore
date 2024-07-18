@@ -2,8 +2,8 @@ build/
 *.class
 sources.txt
 
-clox/src/bin
-clox/src/obj
+clox/src/bin/*
+clox/src/obj/*
 
 # maven 
 target/
