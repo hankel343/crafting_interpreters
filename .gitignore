@@ -2,6 +2,7 @@ build/
 *.class
 sources.txt
 
+.vscode/
 clox/src/bin/*
 clox/src/obj/*
 
