@@ -9,7 +9,7 @@ BDIR =./bin
 _DEPS =chunk.h common.h debug.h memory.h value.h vm.h compiler.h scanner.h object.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ =chunk.o debug.o memory.o value.o main.o vm.o compiler.o scanner.o
+_OBJ =chunk.o debug.o memory.o value.o main.o vm.o compiler.o scanner.o object.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
