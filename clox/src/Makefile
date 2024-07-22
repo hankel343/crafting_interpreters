@@ -6,10 +6,10 @@ ODIR =obj
 LDIR =../lib
 BDIR =./bin
 
-_DEPS =chunk.h common.h debug.h memory.h value.h vm.h compiler.h scanner.h object.h
+_DEPS =chunk.h common.h debug.h memory.h value.h vm.h compiler.h scanner.h object.h table.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ =chunk.o debug.o memory.o value.o main.o vm.o compiler.o scanner.o object.o
+_OBJ =chunk.o debug.o memory.o value.o main.o vm.o compiler.o scanner.o object.o table.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
