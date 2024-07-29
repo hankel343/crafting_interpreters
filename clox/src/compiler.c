@@ -564,6 +564,8 @@ static void declaration() {
         funDeclaration();
     } else if (match(TOKEN_VAR)) {
         varDeclaration();
+    } else {
+        statement();
     }
 
     if (parser.panicMode) synchronize();
