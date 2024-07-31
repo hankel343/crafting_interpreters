@@ -1,0 +1,5 @@
+print this; // top-level
+
+fun notMethod() {
+    print this; // in a function
+}
