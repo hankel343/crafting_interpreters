@@ -1,5 +1,5 @@
-print this; // top-level
+print this;
 
 fun notMethod() {
-    print this; // in a function
+    print this;
 }
